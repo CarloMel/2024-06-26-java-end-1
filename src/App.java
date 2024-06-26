@@ -2,7 +2,8 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // es1();
-        es2();
+        // es2();
+        es3();
     }
 
     public static void es1() {
@@ -38,6 +39,13 @@ public class App {
         studente.aggiungiVoto(1);
         studente.aggiungiVoto(10);
         System.out.println(studente);
+    }
+
+    public static void es3() {
+
+        ContoBancario contoBancario = new ContoBancario();
+
+        System.out.println(contoBancario);
     }
 }
 
