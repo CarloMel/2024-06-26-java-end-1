@@ -26,12 +26,18 @@ public class Prenotazione {
         this.postiDisponibili = postiDisponibili;
     }
 
-    // public boolean[] verificaPrenotazioni () {
+    public String verificaPrenotazioni () {
 
-        // boolean[] riassuntoPrenotazioni = new boolean[];
+        String stringToReturn = "";
+        int index = 1;
 
-        // return riassuntoPrenotazioni;
-    // }
+        for (boolean x: getPostiDisponibili()) {
+            stringToReturn += index + "." + x + " ";
+            index++;
+        }
+
+        return stringToReturn;
+    }
 
     public void aggiungiPrenotazione () {
 
@@ -45,15 +51,6 @@ public class Prenotazione {
     @Override
     public String toString() {
 
-        String stringToReturn = "";
-        int index = 1;
-
-        for (boolean x: getPostiDisponibili()) {
-            stringToReturn += index + "." + x + " ";
-            index++;
-        }
-
-        return "Resoconto posti teatro: " + "\n"
-        + stringToReturn;
+        return "Riassunto prenotazioni teatro: " + "\n" + verificaPrenotazioni();
     }
 }
