@@ -162,12 +162,16 @@ public class App {
 
         elezioni.inserisciVoto(elettore1, Mario);
         elezioni.inserisciVoto(elettore2, Luigi);
-        elezioni.inserisciVoto(elettore1, Luigi);
-        
-        
+        // Lo stesso elettore  non può votare più volte
+        elezioni.inserisciVoto(elettore1, Wario);
+        elezioni.inserisciVoto(elettore3, Wario);
+        elezioni.inserisciVoto(elettore4, Wario);
 
+
+        // Non puoi votare candidati inesistenti
+        // elezioni.inserisciVoto(elettore4, Inesistente);
+        
         System.out.println(elezioni);
-
     }
 }
 /**
