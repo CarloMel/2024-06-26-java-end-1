@@ -6,17 +6,35 @@
 // * doppi voti o voti a candidati non esistenti.
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Elezioni {
 
     Map<String,Integer> elezioni = new HashMap<>();
-    Map<Elettore,String> votiEffettuati = new HashMap<>();
+    Map<String,String> votiEffettuati = new HashMap<>();
+    Set<String> elettoriCheHannoVotato = new HashSet<>();
 
     public void inserisciVoto(Elettore elettore, Candidato candidato) {
 
-        votiEffettuati.put(elettore,candidato.getName());
-        elezioni.put(candidato.getName(), 1);
+        String nomeElettore = elettore.getName();
+        String nomeCandidato = candidato.getName();
+
+        try {
+
+            if (elettoriCheHannoVotato.contains(nomeElettore)) {
+
+                throw new Exception( nomeCandidato + " è stato già votato");
+            }
+
+            votiEffettuati.put(elettore.getName(),candidato.getName());
+            elezioni.put(candidato.getName(), 1);
+            elettoriCheHannoVotato.add(elettore.getName());
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

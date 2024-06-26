@@ -162,6 +162,9 @@ public class App {
 
         elezioni.inserisciVoto(elettore1, Mario);
         elezioni.inserisciVoto(elettore2, Luigi);
+        elezioni.inserisciVoto(elettore1, Luigi);
+        
+        
 
         System.out.println(elezioni);
 
