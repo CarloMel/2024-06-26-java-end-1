@@ -10,23 +10,17 @@ import java.util.Map;
 
 public class Elezioni {
 
-    Map<Candidato,Integer> elezioni = new HashMap<>();
-    Map<Elettore,Candidato> votiEffettuati = new HashMap<>();
+    Map<String,Integer> elezioni = new HashMap<>();
+    Map<Elettore,String> votiEffettuati = new HashMap<>();
 
     public void inserisciVoto(Elettore elettore, Candidato candidato) {
 
-        votiEffettuati.put(elettore,candidato);
-        elezioni.put(candidato, 1);
+        votiEffettuati.put(elettore,candidato.getName());
+        elezioni.put(candidato.getName(), 1);
     }
 
     @Override
     public String toString() {
-
-        String stringToReturn = "";
-        for (int i = 0; i < elezioni.size(); i++) {
-
-
-        }
 
         return "Riassunto elezioni: "
         + elezioni;
