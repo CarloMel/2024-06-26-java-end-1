@@ -79,9 +79,18 @@ public class App {
 
     public static void es4() {
 
+        // 11 contatti in totale
         Contatto Mario = new Contatto("Mario","123456");
         Contatto Luigi = new Contatto("Luigi","789101");
         Contatto Wrong = new Contatto("Wrong","78a9101");
+        Contatto Carlo = new Contatto("Carlo","24534");
+        Contatto Gianni = new Contatto("Gianni","763456");
+        Contatto Pino = new Contatto("Pino","093456");
+        Contatto Maria = new Contatto("Maria","126578");
+        Contatto Anna = new Contatto("Anna","256345");
+        Contatto Holly = new Contatto("Holly","223457");
+        Contatto Tina = new Contatto("Tina","009345");
+        Contatto Piero = new Contatto("Piero","125467");
         ElencoTelefonico elenco = new ElencoTelefonico();
 
 
@@ -113,6 +122,23 @@ public class App {
         System.out.println("Aggiungo un contatto errato");
         elenco.aggiungiContatto(Wrong);
         System.out.println(elenco);
+
+        System.out.println("====================================");
+
+        System.out.println("Aggiungo 8 contatti così da poter cercare qualcuno");
+        elenco.aggiungiContatto(Piero);
+        elenco.aggiungiContatto(Carlo);
+        elenco.aggiungiContatto(Gianni);
+        elenco.aggiungiContatto(Pino);
+        elenco.aggiungiContatto(Maria);
+        elenco.aggiungiContatto(Holly);
+        elenco.aggiungiContatto(Anna);
+        elenco.aggiungiContatto(Tina);
+
+        System.out.println(elenco);
+
+        System.out.println("Cerco Pino");
+        elenco.cercaContatto(Pino);
 
 
 
