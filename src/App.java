@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -167,7 +164,7 @@ public class App {
 
         // Lo stesso elettore  non può votare più volte
         elezioni.inserisciVoto(elettore1, Wario);
-        
+
         elezioni.inserisciVoto(elettore3, Wario);
         elezioni.inserisciVoto(elettore4, Waluigi);
         elezioni.inserisciVoto(elettore5, Luigi);
