@@ -6,7 +6,14 @@ public class App {
 
     public static void test() {
 
-        System.out.println("Hello, World!");
+        es1();
+    }
+
+    public static void es1() {
+
+        Prenotazione prenotazione = new Prenotazione(10);
+
+        System.out.println(prenotazione);
     }
 }
 
