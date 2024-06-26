@@ -143,34 +143,18 @@ public class App {
         System.out.println("Cerco Carlo");
         elenco.cercaContatto(Carlo);
 
-
-
     }
 
     public static void es5() {
 
-        GestioneVotazioni elezioni = new GestioneVotazioni();
-
-        Elettore elettore1 = new Elettore();
-        // Elettore elettore2 = new Elettore();
-        // Elettore elettore3 = new Elettore();
-        // Elettore elettore4 = new Elettore();
-
-        Candidato Mario = new Candidato("Mario");
-        // Candidato Luigi = new Candidato("Luigi");
-        // Candidato Wario = new Candidato("Wario");
-        // Candidato Waluigi = new Candidato("Waluigi");
-
-        elettore1.vota(Mario);
-
-        System.out.println("=============================================================");
+        Elezioni elezioni = new Elezioni();
+        Candidato candidato1 = new Candidato();
+        Elettore Mario = new Elettore("Mario");
 
         System.out.println(elezioni);
+
     }
-
-    public static void es6() {};
 }
-
 /**
  * TODO:
  * 

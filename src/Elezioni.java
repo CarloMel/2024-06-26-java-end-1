@@ -5,21 +5,11 @@
 // * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
 // * doppi voti o voti a candidati non esistenti.
 
-public class Elettore {
+public class Elezioni {
 
-    private String name;
-
-    public Elettore (String name) {
-
-       setName(name); 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "Elezioni";
     }
     
 }

@@ -6,25 +6,5 @@
 // * doppi voti o voti a candidati non esistenti.
 
 public class Candidato {
-
-    private String nomeCandidato;
-
-    public Candidato (String nome) {
-
-        setNomeCandidato(nome);
-    }
-
-    public String getNomeCandidato() {
-        return nomeCandidato;
-    }
-
-    public void setNomeCandidato(String nomeCandidato) {
-        this.nomeCandidato = nomeCandidato;
-    }
-
-    @Override
-    public String toString() {
-
-        return nomeCandidato;
-    }
+    
 }
