@@ -5,9 +5,6 @@
 // * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
 // * doppi voti o voti a candidati non esistenti.
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Candidato {
 
     private String nomeCandidato;
@@ -27,7 +24,7 @@ public class Candidato {
 
     @Override
     public String toString() {
-        
+
         return nomeCandidato;
     }
 }

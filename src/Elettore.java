@@ -8,6 +8,9 @@
 public class Elettore {
 
     public void vota(Candidato candidato) {
+
+        // inserisciVoto(candidato);
+
     }
     
 }

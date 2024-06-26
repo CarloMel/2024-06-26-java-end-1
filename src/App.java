@@ -146,6 +146,8 @@ public class App {
 
     public static void es5() {
 
+        GestioneVotazioni gestore = new GestioneVotazioni();
+
         Elettore elettore1 = new Elettore();
         Elettore elettore2 = new Elettore();
         Elettore elettore3 = new Elettore();
@@ -156,9 +158,10 @@ public class App {
         Candidato Wario = new Candidato("Wario");
         Candidato Waluigi = new Candidato("Waluigi");
 
-        elettore1.vota(Mario);
+        // elettore1.vota(Mario);
+        gestore.inserisciVoto(Mario);
 
-        System.out.println(Mario);
+        System.out.println(gestore);
     }
 }
 
