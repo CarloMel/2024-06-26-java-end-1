@@ -8,8 +8,7 @@ public class App {
         // es2();
         // es3();
         // es4();
-        // es5();
-        // s6();
+        es5();
     }
 
     public static void es1() {
@@ -163,8 +162,6 @@ public class App {
         // Candidato Waluigi = new Candidato("Waluigi");
 
         elettore1.vota(Mario);
-
-        System.out.println(elettore1);
 
         System.out.println("=============================================================");
 

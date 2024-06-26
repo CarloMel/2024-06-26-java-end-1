@@ -20,6 +20,11 @@ public class GestioneVotazioni {
         this.mappaVotazioni = mappaVotazioni;
     }
 
+    public void mappaVotazioni(Candidato candidato) {
+
+        mappaVotazioni.put(candidato, 1);
+    }
+
     @Override
     public String toString() {
 
