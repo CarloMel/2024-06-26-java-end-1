@@ -40,23 +40,45 @@ public class Studente {
     }
 
     public void setVoti(List<Integer> voti) {
+
         this.voti = voti;
     }
 
     public void aggiungiVoto(int voto) {
 
-    voti.add(voto);
+        try {
+
+            if (voto <= 0 || voto > 10) {
+                throw new Exception("I voti devono essere compresi tra 1 e 10");
+            }
+
+            voti.add(voto);
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public double calcolaMediaVoti() {
 
-        double mediaVoti = 0;
-        for (int x : voti) {
+        try {
 
-            mediaVoti += x;
+            double mediaVoti = 0;
+            for (int x : voti) {
+    
+                mediaVoti += x;
+            }
+            
+            if ( voti.size() == 0) 
+                throw new Exception ("Impossibile calcolare la media senza voti o con voti che valgono 0");
+
+            return mediaVoti /= voti.size();
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+            return 0;
         }
-
-        return mediaVoti /= voti.size();
     }
 
     @Override

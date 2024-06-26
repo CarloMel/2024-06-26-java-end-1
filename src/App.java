@@ -35,7 +35,7 @@ public class App {
     public static void es2 () {
         Studente studente = new Studente("Mario","MAT1234");
 
-        studente.aggiungiVoto(5);
+        studente.aggiungiVoto(1);
         studente.aggiungiVoto(10);
         System.out.println(studente);
     }
