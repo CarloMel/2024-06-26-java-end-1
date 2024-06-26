@@ -21,8 +21,12 @@ public class Elezioni {
 
     @Override
     public String toString() {
-        
+
         String stringToReturn = "";
+        for (int i = 0; i < elezioni.size(); i++) {
+
+
+        }
 
         return "Riassunto elezioni: "
         + elezioni;
