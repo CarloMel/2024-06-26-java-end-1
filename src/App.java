@@ -158,14 +158,21 @@ public class App {
         Elettore elettore2 = new Elettore("Franco");
         Elettore elettore3 = new Elettore("Pino");
         Elettore elettore4 = new Elettore("Piero");
+        Elettore elettore5 = new Elettore("Gaspare");
+        Elettore elettore6 = new Elettore("Deborah");
 
 
         elezioni.inserisciVoto(elettore1, Mario);
         elezioni.inserisciVoto(elettore2, Luigi);
+
         // Lo stesso elettore  non può votare più volte
         elezioni.inserisciVoto(elettore1, Wario);
+        
         elezioni.inserisciVoto(elettore3, Wario);
-        elezioni.inserisciVoto(elettore4, Wario);
+        elezioni.inserisciVoto(elettore4, Waluigi);
+        elezioni.inserisciVoto(elettore5, Luigi);
+        elezioni.inserisciVoto(elettore6, Luigi);
+
 
 
         // Non puoi votare candidati inesistenti

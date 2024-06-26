@@ -12,24 +12,30 @@ import java.util.Set;
 
 public class Elezioni {
 
-    Map<String,Integer> elezioni = new HashMap<>();
-    Map<String,String> votiEffettuati = new HashMap<>();
+    // global variables
+    Map<String, Integer> candidatiValoriMap = new HashMap<>();
+    Map<String, String> votiEffettuati = new HashMap<>();
     Set<String> elettoriCheHannoVotato = new HashSet<>();
 
     public void inserisciVoto(Elettore elettore, Candidato candidato) {
 
+        // variables to make the code easier to read
         String nomeElettore = elettore.getName();
         String nomeCandidato = candidato.getName();
 
+        // try catch to avoid that one person votes for two candidates
         try {
 
             if (elettoriCheHannoVotato.contains(nomeElettore)) {
 
-                throw new Exception( nomeCandidato + " è stato già votato");
+                throw new Exception(nomeCandidato + " è stato già votato");
             }
 
-            votiEffettuati.put(elettore.getName(),candidato.getName());
-            elezioni.put(candidato.getName(), 1);
+            // adding values to the global variables
+            votiEffettuati.put(elettore.getName(), candidato.getName());
+
+            candidatiValoriMap.put(candidato.getName(), 0);
+
             elettoriCheHannoVotato.add(elettore.getName());
         } catch (Exception e) {
 
@@ -41,7 +47,7 @@ public class Elezioni {
     public String toString() {
 
         return "Riassunto elezioni: "
-        + elezioni;
+                + candidatiValoriMap;
     }
-    
+
 }
