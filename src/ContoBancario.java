@@ -6,19 +6,42 @@
 
 public class ContoBancario {
 
-    public void depositaDenaro () {}
+    private int sommaInDeposito;
 
-    public void prelevaDenaro() {}
+    public ContoBancario() {
 
-    public int ottieniSaldo() {
+        setSommaInDeposito(getSommaInDeposito());
+    }
 
-        int saldo = 0;
+    public int getSommaInDeposito() {
+        return sommaInDeposito;
+    }
 
-        return saldo;
+    public void setSommaInDeposito(int sommaInDeposito) {
+        this.sommaInDeposito = sommaInDeposito;
+    }
+
+    public void depositaDenaro (int somma) {
+
+        setSommaInDeposito(getSommaInDeposito() + somma);
+
+        System.out.println("Hai depositato: " + somma + " euro");
+    }
+
+    public void prelevaDenaro(int somma) {
+
+        setSommaInDeposito(getSommaInDeposito() - somma);
+
+        System.out.println("Hai prelevato: " + somma + " euro");
+    }
+
+    public String ottieniSaldo() {
+
+        return "Il tuo conto è di " +  getSommaInDeposito();
     }
 
     @Override
     public String toString() {
-        return "Conto bancario: ";
+        return "Conto bancario: " + "\n" + ottieniSaldo() + " euro";
     }
 }

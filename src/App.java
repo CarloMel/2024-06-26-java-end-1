@@ -46,6 +46,14 @@ public class App {
         ContoBancario contoBancario = new ContoBancario();
 
         System.out.println(contoBancario);
+
+        System.out.println("====================================");
+        contoBancario.depositaDenaro(200);
+        System.out.println(contoBancario);
+
+        System.out.println("====================================");
+        contoBancario.prelevaDenaro(150);
+        System.out.println(contoBancario);
     }
 }
 
