@@ -23,16 +23,40 @@ public class ContoBancario {
 
     public void depositaDenaro (int somma) {
 
-        setSommaInDeposito(getSommaInDeposito() + somma);
+        try{
+            
+            if (somma <= 0) {
+                throw new Exception("Non puoi depositare una quantità inferiore o uguale a 0");
+            }
 
-        System.out.println("Hai depositato: " + somma + " euro");
+            setSommaInDeposito(getSommaInDeposito() + somma);
+
+            System.out.println("Hai depositato: " + somma + " euro");
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void prelevaDenaro(int somma) {
 
-        setSommaInDeposito(getSommaInDeposito() - somma);
+        try {
 
-        System.out.println("Hai prelevato: " + somma + " euro");
+            if (somma > getSommaInDeposito()) {
+                throw new Exception("Non puoi ritirare una somma maggiore di quella di cui disponi"
+                + "(" + getSommaInDeposito() + " euro)");
+            }
+
+            setSommaInDeposito(getSommaInDeposito() - somma);
+
+            System.out.println("Hai prelevato: " + somma + " euro");
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
     public String ottieniSaldo() {

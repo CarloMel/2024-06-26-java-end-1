@@ -54,6 +54,26 @@ public class App {
         System.out.println("====================================");
         contoBancario.prelevaDenaro(150);
         System.out.println(contoBancario);
+
+        System.out.println("====================================");
+
+        System.out.println("Deposito 0");
+        contoBancario.depositaDenaro(0);
+
+        System.out.println("Deposito -1");
+        contoBancario.depositaDenaro(-1);
+
+        System.out.println("====================================");
+
+        System.out.println("Ritiro 1000");
+        contoBancario.prelevaDenaro(1000);
+        System.out.println(contoBancario);
+
+        System.out.println("====================================");
+
+        System.out.println("Ritiro 49");
+        contoBancario.prelevaDenaro(49);
+        System.out.println(contoBancario);
     }
 }
 
