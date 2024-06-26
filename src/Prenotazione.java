@@ -58,7 +58,16 @@ public class Prenotazione {
         };
     }
 
-    public void annullaPrenotazione() {
+    public void annullaPrenotazione(int indexDaAnnullare) {
+
+        boolean index = getPostiDisponibili()[indexDaAnnullare];
+
+        if (index == true) {
+            getPostiDisponibili()[indexDaAnnullare] = false;
+            System.out.println("Annullata la prenotazione al " + (indexDaAnnullare + 1) + "° posto"); 
+        } else {
+            System.out.println("Il " + (indexDaAnnullare + 1) + "° posto è già disponibile");
+        }
 
     }
 

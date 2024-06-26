@@ -28,6 +28,12 @@ public class App {
         System.out.println("Verifica posti");
         prenotazione.verificaPrenotazioni();
         System.out.println("==========================================================");
+
+        System.out.println("Annullo prenotazione al 1° , 3° e 9° posto");
+        prenotazione.annullaPrenotazione(0);
+        prenotazione.annullaPrenotazione(2);
+        prenotazione.annullaPrenotazione(8);  
+        System.out.println(prenotazione);
     }
 }
 
