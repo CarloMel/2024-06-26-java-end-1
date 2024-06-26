@@ -28,18 +28,30 @@ public class Elezioni {
 
             if (elettoriCheHannoVotato.contains(nomeElettore)) {
 
-                throw new Exception(nomeCandidato + " è stato già votato");
+                throw new Exception("Errore: un elettore può votare soltanto un candidato!");
             }
-
-            // adding values to the global variables
-            votiEffettuati.put(elettore.getName(), candidato.getName());
-
-            candidatiValoriMap.put(candidato.getName(), 0);
-
-            elettoriCheHannoVotato.add(elettore.getName());
         } catch (Exception e) {
 
             System.out.println(e.getMessage());
+        }
+
+        // adding values to voti effettuati (elettore1 = Mario)
+        votiEffettuati.put(elettore.getName(), candidato.getName());
+
+        // adding values to elettoriCheHannoVotato (elettore1,elettore2 etc)
+        elettoriCheHannoVotato.add(elettore.getName());
+
+        // Verifica se il candidato è già presente nella mappa dei voti
+        // Se presente, incrementa il conteggio dei voti per il candidato
+        // Se non presente, aggiungi il candidato alla mappa con un voto iniziale di 1
+        if (candidatiValoriMap.containsKey(nomeCandidato)) {
+
+            int votiAttuali = candidatiValoriMap.get(nomeCandidato);
+
+            candidatiValoriMap.put(nomeCandidato, votiAttuali + 1);
+        } else {
+
+            candidatiValoriMap.put(nomeCandidato, 1);
         }
     }
 
