@@ -5,20 +5,10 @@
 // * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
 // * doppi voti o voti a candidati non esistenti.
 
-public class Candidato {
-    
-    private String name;
+public class Candidato extends Persona {
 
-    public Candidato(String name) {
+    public Candidato (String name) {
 
-        setName(name);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        super( name);
     }
 }

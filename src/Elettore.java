@@ -5,7 +5,10 @@
 // * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
 // * doppi voti o voti a candidati non esistenti.
 
-public class Elettore {
+public class Elettore extends Persona {
 
-    
+    public Elettore (String name) {
+
+        super(name);
+    }
 }

@@ -21,6 +21,9 @@ public class Elezioni {
 
     @Override
     public String toString() {
+        
+        String stringToReturn = "";
+
         return "Riassunto elezioni: "
         + elezioni;
     }
