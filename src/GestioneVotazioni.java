@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class GestioneVotazioni {
 
-    private Map<Candidato, Integer> mappaVotazioni = new HashMap();
+    private Map<Candidato, Integer> mappaVotazioni = new HashMap<>();
 
     public Map<Candidato, Integer> getMappaVotazioni() {
         return mappaVotazioni;
@@ -18,11 +18,6 @@ public class GestioneVotazioni {
 
     public void setMappaVotazioni(Map<Candidato, Integer> mappaVotazioni) {
         this.mappaVotazioni = mappaVotazioni;
-    }
-    
-    public void inserisciVoto(Candidato candidato) {
-
-        mappaVotazioni.put(candidato, +1);
     }
 
     @Override

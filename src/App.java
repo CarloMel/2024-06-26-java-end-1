@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -5,7 +8,8 @@ public class App {
         // es2();
         // es3();
         // es4();
-        es5();
+        // es5();
+        // s6();
     }
 
     public static void es1() {
@@ -149,14 +153,14 @@ public class App {
         GestioneVotazioni elezioni = new GestioneVotazioni();
 
         Elettore elettore1 = new Elettore();
-        Elettore elettore2 = new Elettore();
-        Elettore elettore3 = new Elettore();
-        Elettore elettore4 = new Elettore();
+        // Elettore elettore2 = new Elettore();
+        // Elettore elettore3 = new Elettore();
+        // Elettore elettore4 = new Elettore();
 
         Candidato Mario = new Candidato("Mario");
-        Candidato Luigi = new Candidato("Luigi");
-        Candidato Wario = new Candidato("Wario");
-        Candidato Waluigi = new Candidato("Waluigi");
+        // Candidato Luigi = new Candidato("Luigi");
+        // Candidato Wario = new Candidato("Wario");
+        // Candidato Waluigi = new Candidato("Waluigi");
 
         elettore1.vota(Mario);
 
@@ -166,6 +170,8 @@ public class App {
 
         System.out.println(elezioni);
     }
+
+    public static void es6() {};
 }
 
 /**

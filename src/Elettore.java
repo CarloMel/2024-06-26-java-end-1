@@ -7,24 +7,24 @@
 
 public class Elettore {
 
-    private Candidato votanteDi;
+    private Candidato haVotatoPerCandidato;
 
-    public Candidato getVotanteDi() {
-        return votanteDi;
+    public Candidato getHaVotatoPerCandidato() {
+        return haVotatoPerCandidato;
     }
 
-    public void setVotanteDi(Candidato votanteDi) {
-        this.votanteDi = votanteDi;
+    public void setHaVotatoPerCandidato(Candidato haVotatoPerCandidato) {
+        this.haVotatoPerCandidato = haVotatoPerCandidato;
     }
 
     public void vota(Candidato candidato) {
 
-        setVotanteDi(candidato);
+        setHaVotatoPerCandidato(candidato);
     }
 
     @Override
     public String toString() {
-        return "Questo elettore ha votato: " + votanteDi;
+        return "Questo elettore ha votato per: " + haVotatoPerCandidato;
     }
 
 }
