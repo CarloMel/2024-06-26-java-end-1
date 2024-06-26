@@ -79,6 +79,33 @@ public class App {
 
     public static void es4() {
 
+        Contatto Mario = new Contatto("Mario","123456");
+        Contatto Luigi = new Contatto("Luigi","789101");
+        ElencoTelefonico elenco = new ElencoTelefonico();
+
+        System.out.println(Mario);
+        System.out.println(elenco);
+        System.out.println("====================================");
+
+        System.out.println(Mario);
+        System.out.println(Luigi);
+        System.out.println();
+
+        System.out.println("Aggiungo solo Mario");
+        elenco.aggiungiContatto(Mario);
+        System.out.println(elenco);
+
+        System.out.println("Aggiungo Luigi");
+        elenco.aggiungiContatto(Luigi);
+        System.out.println(elenco);
+
+        System.out.println("====================================");
+
+        System.out.println("Rimuovo Mario");
+        elenco.rimuoviContatto(Mario);;
+        System.out.println(elenco);
+
+        
 
     }
 }

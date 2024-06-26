@@ -32,4 +32,11 @@ public class Contatto {
     public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
+
+    @Override
+    public String toString() {
+
+        return "Nome: " + getNome()
+        + " Numero: " + getNumeroTelefono();
+    }
 }

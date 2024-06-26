@@ -13,9 +13,25 @@ public class ElencoTelefonico {
     
     private List<Contatto> listaContatti = new ArrayList<>();
 
-    public void aggiungiContatto() {}
+    public void aggiungiContatto(Contatto contatto) {
 
-    public void rimuoviContatto() {}
+        listaContatti.add(contatto);
+    }
 
-    public void cercaContatto() {}
+    public void rimuoviContatto(Contatto contatto) {
+
+        listaContatti.remove(listaContatti.indexOf(contatto));
+    }
+
+    public void cercaContatto(Contatto contatto) {
+
+        System.out.println(listaContatti.indexOf(contatto.toString()));
+    }
+
+    @Override
+    public String toString() {
+
+        return "Elenco telefonico: " + "\n"
+        + listaContatti;
+    }
  }
