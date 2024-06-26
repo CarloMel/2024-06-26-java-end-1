@@ -2,12 +2,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // es1();
-        // es2();
-    }
-
-    public static void test() {
-
-
+        es2();
     }
 
     public static void es1() {
@@ -35,6 +30,14 @@ public class App {
         prenotazione.annullaPrenotazione(2);
         prenotazione.annullaPrenotazione(8);  
         System.out.println(prenotazione);
+    }
+
+    public static void es2 () {
+        Studente studente = new Studente("Mario","MAT1234");
+
+        studente.aggiungiVoto(5);
+        studente.aggiungiVoto(10);
+        System.out.println(studente);
     }
 }
 

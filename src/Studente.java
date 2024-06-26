@@ -16,10 +16,10 @@ public class Studente {
 
 
 
-    public Studente (String nome, String matricola,List<Integer> voti) {
+    public Studente (String nome, String matricola) {
         setNome(nome);
         setMatricola(matricola);
-        setVoti(voti);
+        getVoti();
     }
 
     public String getNome() {
@@ -43,19 +43,28 @@ public class Studente {
         this.voti = voti;
     }
 
-    public void aggiungiVoto() {
+    public void aggiungiVoto(int voto) {
 
-
+    voti.add(voto);
     }
 
-    public void calcolaMediaVoti() {}
+    public double calcolaMediaVoti() {
 
-//     @Override
-//     public String toString() {
+        double mediaVoti = 0;
+        for (int x : voti) {
 
-//         return "Studente " + getNome()
-//         + "" + getMatricola()
-//         + " Voti: " + getVoti()
-//         + " Media voti: " + calcolaMediaVoti();
-//     }
+            mediaVoti += x;
+        }
+
+        return mediaVoti /= voti.size();
+    }
+
+    @Override
+    public String toString() {
+
+        return "Studente " + getNome()
+        + " " + getMatricola()
+        + " Voti: " + getVoti()
+        + " Media voti: " + calcolaMediaVoti();
+    }
 }
