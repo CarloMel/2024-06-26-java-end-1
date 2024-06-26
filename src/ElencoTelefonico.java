@@ -43,7 +43,9 @@ public class ElencoTelefonico {
 
     public void cercaContatto(Contatto contatto) {
 
-        System.out.println(listaContatti.indexOf(contatto.toString()));
+        int posizioneContatto = listaContatti.indexOf(contatto);
+
+        System.out.println(listaContatti.get(posizioneContatto));
     }
 
     @Override

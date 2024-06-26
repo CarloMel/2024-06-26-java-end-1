@@ -119,9 +119,8 @@ public class App {
 
         System.out.println("====================================");
 
-        System.out.println("Aggiungo un contatto errato");
-        elenco.aggiungiContatto(Wrong);
-        System.out.println(elenco);
+        System.out.println("Controllo se contatto errato è stato creato");
+        System.out.println(Wrong);
 
         System.out.println("====================================");
 
@@ -137,8 +136,8 @@ public class App {
 
         System.out.println(elenco);
 
-        System.out.println("Cerco Pino");
-        elenco.cercaContatto(Pino);
+        System.out.println("Cerco Carlo");
+        elenco.cercaContatto(Carlo);
 
 
 

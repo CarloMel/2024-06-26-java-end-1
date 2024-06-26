@@ -13,8 +13,24 @@ public class Contatto {
 
     public Contatto(String nome,String numeroTelefono) {
 
-        setNome(nome);
-        setNumeroTelefono(numeroTelefono);
+
+        try {
+
+            char[] charArr = numeroTelefono.toCharArray();
+            for (char c : charArr) {
+
+                if (Character.isAlphabetic(c)) {
+
+                    throw new Exception("Numero di telefono non valido, non posso creare un contatto per " + nome);
+                }
+            }
+            setNome(nome);
+            setNumeroTelefono(numeroTelefono);
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
     }
 
     public String getNome() {
@@ -29,7 +45,7 @@ public class Contatto {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(String numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) throws Exception {
         
         this.numeroTelefono = numeroTelefono;
     }
