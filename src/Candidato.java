@@ -7,4 +7,18 @@
 
 public class Candidato {
     
+    private String name;
+
+    public Candidato(String name) {
+
+        setName(name);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

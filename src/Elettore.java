@@ -7,19 +7,5 @@
 
 public class Elettore {
 
-    private String name;
-
-    public Elettore (String name) {
-
-       setName(name); 
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
     
 }

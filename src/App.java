@@ -147,9 +147,11 @@ public class App {
 
     public static void es5() {
 
+        Candidato Mario = new Candidato("Mario");
+        Elettore elettore1 = new Elettore();
         Elezioni elezioni = new Elezioni();
-        Candidato candidato1 = new Candidato();
-        Elettore Mario = new Elettore("Mario");
+
+        elezioni.inserisciVoto(elettore1, Mario);
 
         System.out.println(elezioni);
 
