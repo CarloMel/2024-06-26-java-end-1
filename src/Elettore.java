@@ -7,10 +7,24 @@
 
 public class Elettore {
 
+    private Candidato votanteDi;
+
+    public Candidato getVotanteDi() {
+        return votanteDi;
+    }
+
+    public void setVotanteDi(Candidato votanteDi) {
+        this.votanteDi = votanteDi;
+    }
+
     public void vota(Candidato candidato) {
 
-        // inserisciVoto(candidato);
-
+        setVotanteDi(candidato);
     }
-    
+
+    @Override
+    public String toString() {
+        return "Questo elettore ha votato: " + votanteDi;
+    }
+
 }
