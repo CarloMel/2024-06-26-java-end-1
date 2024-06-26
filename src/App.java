@@ -14,6 +14,14 @@ public class App {
         Prenotazione prenotazione = new Prenotazione(10);
 
         System.out.println(prenotazione);
+
+        System.out.println("Aggiungo 1 posto");
+        prenotazione.aggiungiPrenotazioni(1);
+        System.out.println(prenotazione);
+
+        System.out.println("Aggiungo 8 posti. Dovrebbe restare solo 1 libero");
+        prenotazione.aggiungiPrenotazioni(8);
+        System.out.println(prenotazione);
     }
 }
 

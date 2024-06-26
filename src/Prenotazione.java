@@ -39,9 +39,19 @@ public class Prenotazione {
         return stringToReturn;
     }
 
-    public void aggiungiPrenotazione () {
+    public void aggiungiPrenotazioni (int numeroPrenotazioni) {
 
-        // postiTeatro.add
+        for (int x = 0; x < numeroPrenotazioni; x++) {
+
+            if (postiDisponibili[x] == false) {
+
+                postiDisponibili[x] = true;
+                System.out.println("Prenotazione effettuata!"
+                + "\n" + "Il tuo posto è: " + (x + 1) + "°");
+            } else {
+                // se il posto è già preso  e faccio 8 prenotazioni, ne prenota 7.
+            }
+        };
     }
 
     public void annullaPrenotazione() {
