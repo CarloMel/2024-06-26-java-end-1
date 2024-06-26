@@ -26,17 +26,21 @@ public class Prenotazione {
         this.postiDisponibili = postiDisponibili;
     }
 
-    public String verificaPrenotazioni () {
+    public void verificaPrenotazioni () {
 
-        String stringToReturn = "";
-        int index = 1;
+        int totaleLiberi = 0;
 
-        for (boolean x: getPostiDisponibili()) {
-            stringToReturn += index + "." + x + " ";
-            index++;
+
+        System.out.println("Posti attualmente liberi: ");
+
+        for (int x = 0; x < postiDisponibili.length; x++) {
+            if (postiDisponibili[x] == false) {
+                System.out.print(" " + x + "° ");
+                totaleLiberi++;
+            }
         }
 
-        return stringToReturn;
+        System.out.println("Totale posti liberi: " + totaleLiberi);
     }
 
     public void aggiungiPrenotazioni (int numeroPrenotazioni) {
@@ -49,7 +53,7 @@ public class Prenotazione {
                 System.out.println("Prenotazione effettuata!"
                 + "\n" + "Il tuo posto è: " + (x + 1) + "°");
             } else {
-                // se il posto è già preso  e faccio 8 prenotazioni, ne prenota 7.
+                numeroPrenotazioni++;
             }
         };
     }
@@ -61,6 +65,14 @@ public class Prenotazione {
     @Override
     public String toString() {
 
-        return "Riassunto prenotazioni teatro: " + "\n" + verificaPrenotazioni();
+        String stringToReturn = "";
+        int index = 1;
+
+        for (boolean x: getPostiDisponibili()) {
+            stringToReturn += index + "." + x + " ";
+            index++;
+        }
+        
+        return "Riassunto prenotazioni teatro: " + "\n" + stringToReturn;
     }
 }
