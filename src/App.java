@@ -81,7 +81,10 @@ public class App {
 
         Contatto Mario = new Contatto("Mario","123456");
         Contatto Luigi = new Contatto("Luigi","789101");
+        Contatto Wrong = new Contatto("Wrong","78a9101");
         ElencoTelefonico elenco = new ElencoTelefonico();
+
+
 
         System.out.println(Mario);
         System.out.println(elenco);
@@ -105,7 +108,13 @@ public class App {
         elenco.rimuoviContatto(Mario);;
         System.out.println(elenco);
 
-        
+        System.out.println("====================================");
+
+        System.out.println("Aggiungo un contatto errato");
+        elenco.aggiungiContatto(Wrong);
+        System.out.println(elenco);
+
+
 
     }
 }

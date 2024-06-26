@@ -15,7 +15,25 @@ public class ElencoTelefonico {
 
     public void aggiungiContatto(Contatto contatto) {
 
-        listaContatti.add(contatto);
+        
+        try {
+
+            char[] charArr = contatto.getNumeroTelefono().toCharArray();
+            for (char c : charArr) {
+
+                if (Character.isAlphabetic(c)) {
+                    throw new Exception("I numeri di telefono non hanno lettere. " 
+                    + contatto.getNome() 
+                    +  " non è un contatto valido");
+                }
+            }
+            
+            listaContatti.add(contatto);
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
     }
 
     public void rimuoviContatto(Contatto contatto) {

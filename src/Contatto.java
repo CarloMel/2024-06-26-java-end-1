@@ -30,6 +30,7 @@ public class Contatto {
     }
 
     public void setNumeroTelefono(String numeroTelefono) {
+        
         this.numeroTelefono = numeroTelefono;
     }
 
