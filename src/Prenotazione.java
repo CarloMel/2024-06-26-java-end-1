@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 public class Prenotazione {
 // * ES1: Sistema di Prenotazioni
 // * 
