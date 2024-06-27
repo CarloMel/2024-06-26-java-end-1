@@ -182,7 +182,33 @@ public class App {
     }
 
     public static void es6() {
-        System.out.println("Es6");
+
+        PrenotazioneCamere terminale = new PrenotazioneCamere();
+
+        Camera camera101 = new Camera(101);
+        Camera camera102 = new Camera(102);
+        Camera camera103 = new Camera(103);
+
+
+        Cliente cl1 = new Cliente("Mario", "Rossi");
+        Cliente cl2 = new Cliente("Luigi", "Verdi");
+
+        try {
+
+            terminale.prenotaCamera(cl1, camera101);
+            terminale.prenotaCamera(cl2, camera102);
+            // prova ad andare in una camera già presa
+            // terminale.modificaPrenotazione(cl2, camera101);
+            // cambia camera
+            terminale.prenotaCamera(cl2, camera103);
+
+            
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println(terminale);
     }
 }
 /**
