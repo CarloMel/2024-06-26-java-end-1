@@ -192,27 +192,39 @@ public class App {
 
         Cliente cl1 = new Cliente("Mario", "Rossi");
         Cliente cl2 = new Cliente("Luigi", "Verdi");
+        Cliente cl3 = new Cliente("Sole", "Gialli");
 
         try {
 
+            System.out.println("Aggiungo camere");
+
             terminale.prenotaCamera(cl1, camera101);
             terminale.prenotaCamera(cl2, camera102);
+            terminale.prenotaCamera(cl3, camera103);
+            System.out.println(terminale);
 
-            //Metodo illegale per sbagliare camera
-            // terminale.prenotaCamera(cl2, camera103);
-            //Metodo legale per cambiare camera
-            // terminale.modificaPrenotazione(cl2, camera103);
+            System.out.println("======================================");
 
-            //Cancello prenotazione
-            terminale.cancellaPrenotazione(camera102);
+            System.out.println("Rimuovo 1 camera");
+            terminale.cancellaPrenotazione(cl2, camera102);
+            System.out.println(terminale);
+
+            System.out.println("======================================");
+            System.out.println("Modifico una camera");
+            terminale.modificaPrenotazione(cl3, camera102);
+            System.out.println(terminale);
+
+            System.out.println("======================================");
+            System.out.println("Provo a far prendere 2 stanze ad un cliente");
+            terminale.prenotaCamera(cl1,camera103);
+            System.out.println(terminale);
+
 
             
         } catch (Exception e) {
 
             System.out.println(e.getMessage());
         }
-
-        System.out.println(terminale);
     }
 }
 /**

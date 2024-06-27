@@ -35,23 +35,20 @@ public class PrenotazioneCamere {
         }
     }
 
-    public void cancellaPrenotazione(Camera camera) throws Exception {
+    public void cancellaPrenotazione(Cliente cliente,Camera camera) throws Exception {
 
         if  (getPrenotazioni().values().contains(camera)) {
 
             System.out.println("Prenotazione in camera " + camera.getNumeroCamera() 
             + " eliminata con successo");
-            // getPrenotazioni().remove();
+            getPrenotazioni().remove(cliente,camera);
         } else {
             throw new Exception("Questa camera è già libera");
         }
         
     }
 
-    public void cancellaPrenotazioni() {
-    }
-
-    public void checkPrenotazioni(Cliente cliente, Camera camera) throws Exception {
+    private void checkPrenotazioni(Cliente cliente, Camera camera) throws Exception {
 
         if (getPrenotazioni().containsValue(camera)) {
             throw new Exception("La camera è già occupata");
