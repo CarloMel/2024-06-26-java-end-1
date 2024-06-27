@@ -197,10 +197,14 @@ public class App {
 
             terminale.prenotaCamera(cl1, camera101);
             terminale.prenotaCamera(cl2, camera102);
-            // prova ad andare in una camera già presa
-            // terminale.modificaPrenotazione(cl2, camera101);
-            // cambia camera
-            terminale.prenotaCamera(cl2, camera103);
+
+            //Metodo illegale per sbagliare camera
+            // terminale.prenotaCamera(cl2, camera103);
+            //Metodo legale per cambiare camera
+            // terminale.modificaPrenotazione(cl2, camera103);
+
+            //Cancello prenotazione
+            terminale.cancellaPrenotazione(camera102);
 
             
         } catch (Exception e) {

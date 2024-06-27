@@ -20,28 +20,46 @@ public class PrenotazioneCamere {
 
     public void prenotaCamera(Cliente cliente, Camera camera) throws Exception {
 
-        if (getPrenotazioni().containsValue(camera)) {
-            throw new Exception("La camera è già occupata");
-        } else if(getPrenotazioni().containsKey(cliente))  {
-            throw new Exception("Il cliente ha già occupato una camera");
-        } else {
-            getPrenotazioni().put(cliente, camera);
-        }
+        checkPrenotazioni(cliente, camera);
+        getPrenotazioni().put(cliente, camera);
     }
 
     public void modificaPrenotazione(Cliente cliente,Camera camera) throws Exception {
 
         if (getPrenotazioni().containsKey(cliente)) {
-            prenotaCamera(cliente, camera);
+
+            getPrenotazioni().put(cliente, camera);
+            System.out.println("Camera cambiata!");
         } else {
             throw new Exception("Il cliente non ha camere prenotate");
         }
     }
 
-    public void cancellaPrenotazione() {
+    public void cancellaPrenotazione(Camera camera) throws Exception {
+
+        if  (getPrenotazioni().values().contains(camera)) {
+
+            System.out.println("Prenotazione in camera " + camera.getNumeroCamera() 
+            + " eliminata con successo");
+            // getPrenotazioni().remove();
+        } else {
+            throw new Exception("Questa camera è già libera");
+        }
+        
     }
 
     public void cancellaPrenotazioni() {
+    }
+
+    public void checkPrenotazioni(Cliente cliente, Camera camera) throws Exception {
+
+        if (getPrenotazioni().containsValue(camera)) {
+            throw new Exception("La camera è già occupata");
+        }
+
+        if(getPrenotazioni().containsKey(cliente))  {
+            throw new Exception("Il cliente ha già occupato una camera");
+        }
     }
 
     @Override
