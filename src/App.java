@@ -5,7 +5,8 @@ public class App {
         // es2();
         // es3();
         // es4();
-        es5();
+        // es5();
+        es6();
     }
 
     public static void es1() {
@@ -178,6 +179,10 @@ public class App {
         }
 
         System.out.println(elezioni);
+    }
+
+    public static void es6() {
+        System.out.println("Es6");
     }
 }
 /**
