@@ -4,9 +4,9 @@ public class App {
         // es1();
         // es2();
         // es3();
-        // es4();
+        es4();
         // es5();
-        es6();
+        // es6();
     }
 
     public static void es1() {
@@ -145,8 +145,8 @@ public class App {
 
         System.out.println(elenco);
 
-        System.out.println("Cerco Carlo");
-        elenco.cercaContatto(Carlo);
+        System.out.println("Cerco na");
+        elenco.cercaContatto("na");
 
     }
 

@@ -11,7 +11,20 @@ import java.util.List;
 
 public class ElencoTelefonico {
     
-    private List<Contatto> listaContatti = new ArrayList<>();
+    private List<Contatto> listaContatti;
+
+    public ElencoTelefonico () {
+        
+    listaContatti = new ArrayList<>();
+    }
+
+    public List<Contatto> getListaContatti() {
+        return listaContatti;
+    }
+
+    public void setListaContatti(List<Contatto> listaContatti) {
+        this.listaContatti = listaContatti;
+    }
 
     public void aggiungiContatto(Contatto contatto) {
 
@@ -28,7 +41,7 @@ public class ElencoTelefonico {
                 }
             }
             
-            listaContatti.add(contatto);
+            getListaContatti().add(contatto);
 
         } catch (Exception e) {
 
@@ -38,20 +51,34 @@ public class ElencoTelefonico {
 
     public void rimuoviContatto(Contatto contatto) {
 
-        listaContatti.remove(listaContatti.indexOf(contatto));
+        getListaContatti().remove(getListaContatti().indexOf(contatto));
     }
 
-    public void cercaContatto(Contatto contatto) {
+    // public void cercaContatto(Contatto contatto) {
 
-        int posizioneContatto = listaContatti.indexOf(contatto);
+    //     int posizioneContatto = listaContatti.indexOf(contatto);
 
-        System.out.println(listaContatti.get(posizioneContatto));
+    //     System.out.println(listaContatti.get(posizioneContatto));
+    // }
+
+    public void cercaContatto(String ricerca) {
+
+        List<Contatto> listToReturn = new ArrayList<>();
+
+        for (Contatto i : getListaContatti()) {
+
+            if (i.getNome().toLowerCase().contains(ricerca) || (i.getNumeroTelefono().contains(ricerca))) {
+                listToReturn.add(i);
+            }
+        }
+
+        System.out.println(listToReturn.toString());
     }
 
     @Override
     public String toString() {
 
         return "Elenco telefonico: " + "\n"
-        + listaContatti;
+        + getListaContatti();
     }
  }
