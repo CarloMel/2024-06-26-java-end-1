@@ -1,12 +1,15 @@
+import javax.sound.midi.MetaMessage;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
         // es1();
         // es2();
         // es3();
-        es4();
+        // es4();
         // es5();
         // es6();
+        es7();
     }
 
     public static void es1() {
@@ -225,6 +228,23 @@ public class App {
 
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void es7() {
+
+        Impiegato i = new Impiegato("Mario", "Rossi", 1000);
+        Manager m = new Manager("Carlo", "Melluso", 3000, 500);
+
+        System.out.println(i);
+        System.out.println(m);
+
+        System.out.println("Aumento salari 10%");
+
+        i.aumentaSalario(10);
+        m.aumentaSalario(10);
+        
+        System.out.println(i);
+        System.out.println(m);
     }
 }
 /**
