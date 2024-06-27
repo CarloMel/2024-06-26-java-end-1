@@ -1,65 +1,66 @@
-// * ES5: Sistema di Votazione
-// * 
-// * Crea classi per Candidato e Elettore, dove ogni Elettore può votare per un
-// * Candidato. Implementa un meccanismo usando mappe per tenere traccia dei voti
-// * ricevuti da ogni candidato. Assicurati di gestire le eccezioni per casi come
-// * doppi voti o voti a candidati non esistenti.
-
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class Elezioni {
 
-    // global variables
-    Map<String, Integer> candidatiValoriMap = new HashMap<>();
-    Map<String, String> votiEffettuati = new HashMap<>();
-    Set<String> elettoriCheHannoVotato = new HashSet<>();
+     private Map<Elettore,Candidato> elezioni;
 
-    public void inserisciVoto(Elettore elettore, Candidato candidato) {
+    public Elezioni () {
 
-        // variables to make the code easier to read
-        String nomeElettore = elettore.getName();
-        String nomeCandidato = candidato.getName();
+        elezioni = new HashMap<>();
+    }
 
-        // try catch to avoid that one person votes for two candidates
-        try {
+    public Map<Elettore, Candidato> getElezioni() {
+        return elezioni;
+    }
 
-            if (elettoriCheHannoVotato.contains(nomeElettore)) {
+    public void setElezioni(Map<Elettore, Candidato> elezioni) {
+        this.elezioni = elezioni;
+    }
 
-                throw new Exception("Errore: un elettore può votare soltanto un candidato!");
+    public void vota(Elettore e, Candidato c) throws Exception {
+
+        if (getElezioni().containsKey(e)) {
+            throw new Exception( getElezioni().get(e) + " ha già votato!");
+        }
+
+        getElezioni().put(e, c);
+    }
+
+    public Map<Candidato,Integer> getValue() {
+
+        Map<Candidato,Integer> mapToReturn = new HashMap<>();
+
+        for (Elettore i : getElezioni().keySet()) {
+
+            Candidato c = getElezioni().get(i);
+
+            // Se c'è già il candidato nella variabile  interna, recupero il valore dei voti e aggiungo +1,
+            // altrimenti parto da 1 (perché nessuno lo ha votato)
+            if (mapToReturn.containsValue(c)) {
+
+                mapToReturn.put(c,mapToReturn.get(c) + 1);
+            } else {
+
+                mapToReturn.put(c,1);
             }
-        } catch (Exception e) {
-
-            System.out.println(e.getMessage());
         }
 
-        // adding values to voti effettuati (elettore1 = Mario)
-        votiEffettuati.put(elettore.getName(), candidato.getName());
-
-        // adding values to elettoriCheHannoVotato (elettore1,elettore2 etc)
-        elettoriCheHannoVotato.add(elettore.getName());
-
-        // Verifica se il candidato è già presente nella mappa dei voti
-        // Se presente, incrementa il conteggio dei voti per il candidato
-        // Se non presente, aggiungi il candidato alla mappa con un voto iniziale di 1
-        if (candidatiValoriMap.containsKey(nomeCandidato)) {
-
-            int votiAttuali = candidatiValoriMap.get(nomeCandidato);
-
-            candidatiValoriMap.put(nomeCandidato, votiAttuali + 1);
-        } else {
-
-            candidatiValoriMap.put(nomeCandidato, 1);
-        }
+        return mapToReturn;
     }
 
     @Override
     public String toString() {
 
-        return "Riassunto elezioni: "
-                + candidatiValoriMap;
-    }
+        Map<Candidato,Integer> mapToReturnToString = getValue();
+        String toStringToReturn = "";
 
+        for (Candidato c : mapToReturnToString.keySet()){
+            toStringToReturn += c.getName() + " " + c.getLastName() + " voti: " + mapToReturnToString.get(c);
+        }
+
+        return toStringToReturn;
+        
+    }
+    
 }

@@ -1,11 +1,21 @@
-public class Persona {
+public abstract class Persona {
 
-    public Persona (String name) {
+    private String name;
+    private String lastName;
+
+    public Persona (String name, String lastName) {
 
         setName(name);
+        setLastName(lastName);
     }
-    
-    private String name;
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public String getName() {
         return name;

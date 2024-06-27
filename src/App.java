@@ -36,11 +36,18 @@ public class App {
     }
 
     public static void es2 () {
+        
         Studente studente = new Studente("Mario","MAT1234");
+        Studente studente2 = new Studente("Geppino","MAT5678");
 
         studente.aggiungiVoto(1);
         studente.aggiungiVoto(10);
+
+        studente2.aggiungiVoto(4);
+        studente2.aggiungiVoto(8);
+        studente2.aggiungiVoto(6);
         System.out.println(studente);
+        System.out.println(studente2);
     }
 
     public static void es3() {
@@ -146,35 +153,22 @@ public class App {
 
         Elezioni elezioni = new Elezioni();
 
-        Candidato Mario = new Candidato("Mario");
-        Candidato Luigi = new Candidato("Luigi");
-        Candidato Wario = new Candidato("Wario");
-        Candidato Waluigi = new Candidato("Waluigi");
+        Elettore e1 = new Elettore("Mario", "Rossi");
+        Elettore e2 = new Elettore("Luigi", "Verdi");
+        Elettore e3 = new Elettore("Sole", "Gialli");
+        Elettore e4 = new Elettore("Cielo", "Blu");
+        Elettore e5 = new Elettore("Rosa", "Bianca");
 
-        Elettore elettore1 = new Elettore("Gianni");
-        Elettore elettore2 = new Elettore("Franco");
-        Elettore elettore3 = new Elettore("Pino");
-        Elettore elettore4 = new Elettore("Piero");
-        Elettore elettore5 = new Elettore("Gaspare");
-        Elettore elettore6 = new Elettore("Deborah");
+        Candidato c1 = new Candidato("Enrico", "Fucsia");
+        Candidato c2 = new Candidato("Maria", "Rosa");
 
+        try {
 
-        elezioni.inserisciVoto(elettore1, Mario);
-        elezioni.inserisciVoto(elettore2, Luigi);
+            elezioni.vota(e1, c1);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        // Lo stesso elettore  non può votare più volte
-        elezioni.inserisciVoto(elettore1, Wario);
-
-        elezioni.inserisciVoto(elettore3, Wario);
-        elezioni.inserisciVoto(elettore4, Waluigi);
-        elezioni.inserisciVoto(elettore5, Luigi);
-        elezioni.inserisciVoto(elettore6, Luigi);
-
-
-
-        // Non puoi votare candidati inesistenti
-        // elezioni.inserisciVoto(elettore4, Inesistente);
-        
         System.out.println(elezioni);
     }
 }
