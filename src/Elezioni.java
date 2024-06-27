@@ -21,7 +21,12 @@ public class Elezioni {
     public void vota(Elettore e, Candidato c) throws Exception {
 
         if (getElezioni().containsKey(e)) {
-            throw new Exception( getElezioni().get(e) + " ha già votato!");
+            throw new Exception(
+            e.getName()
+            + " " 
+            + e.getLastName()
+            + " "
+            + "ha già votato!");
         }
 
         getElezioni().put(e, c);
@@ -37,7 +42,7 @@ public class Elezioni {
 
             // Se c'è già il candidato nella variabile  interna, recupero il valore dei voti e aggiungo +1,
             // altrimenti parto da 1 (perché nessuno lo ha votato)
-            if (mapToReturn.containsValue(c)) {
+            if (mapToReturn.containsKey(c)) {
 
                 mapToReturn.put(c,mapToReturn.get(c) + 1);
             } else {
@@ -49,6 +54,24 @@ public class Elezioni {
         return mapToReturn;
     }
 
+    public Candidato getWinner() {
+
+        int maxValue = Integer.MIN_VALUE;
+        Candidato winner = null;
+        Map<Candidato,Integer> map = getValue();
+
+        for (Candidato c : map.keySet()) {
+
+            if (map.get(c) > maxValue) {
+
+                maxValue = map.get(c);
+                winner = c;
+            }
+        }
+
+        return winner;
+    }
+
     @Override
     public String toString() {
 
@@ -56,8 +79,15 @@ public class Elezioni {
         String toStringToReturn = "";
 
         for (Candidato c : mapToReturnToString.keySet()){
-            toStringToReturn += c.getName() + " " + c.getLastName() + " voti: " + mapToReturnToString.get(c);
+            toStringToReturn += c.getName() + " " + c.getLastName() + " voti: " + mapToReturnToString.get(c) + "\n";
         }
+
+        toStringToReturn += 
+        "\n" + "Il vincitore è " 
+        + getWinner().getName() 
+        + " " 
+        + getWinner().getLastName() 
+        + "!";
 
         return toStringToReturn;
         

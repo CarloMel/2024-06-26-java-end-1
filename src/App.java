@@ -165,6 +165,14 @@ public class App {
         try {
 
             elezioni.vota(e1, c1);
+            elezioni.vota(e2, c1);
+            elezioni.vota(e3, c2);
+            elezioni.vota(e4, c2);
+            elezioni.vota(e5, c2);
+
+            // provoco l'error
+            elezioni.vota(e1, c2);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
